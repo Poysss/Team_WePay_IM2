@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}Register User - WePay{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2>Register New User Account</h2>
+        <form method="post" class="simple-form">
+            {% csrf_token %}
+            
+            <!-- Username field -->
+            <div class="form-group">
+                <label for="id_username">Username:</label>
+                {{ form.username }}
+                {% if form.username.errors %}
+                    <div class="error-text">{{ form.username.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <!-- Email field -->
+            <div class="form-group">
+                <label for="id_email">Email:</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <div class="error-text">{{ form.email.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <!-- Name fields -->
+            <div class="form-row">
+                <div class="form-group half">
+                    <label for="id_first_name">First Name:</label>
+                    {{ form.first_name }}
+                </div>
+                <div class="form-group half">
+                    <label for="id_last_name">Last Name:</label>
+                    {{ form.last_name }}
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="form-group">
+                <label for="id_phone_number">Phone Number:</label>
+                {{ form.phone_number }}
+            </div>
+
+            <div class="form-group">
+                <label for="id_address">Address:</label>
+                {{ form.address }}
+            </div>
+
+            <!-- Password fields -->
+            <div class="form-group">
+                <label for="id_password1">Password:</label>
+                {{ form.password1 }}
+                {% if form.password1.errors %}
+                    <div class="error-text">{{ form.password1.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="id_password2">Confirm Password:</label>
+                {{ form.password2 }}
+                {% if form.password2.errors %}
+                    <div class="error-text">{{ form.password2.errors.0 }}</div>
+                {% endif %}
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </form>
+
+        <div class="auth-links">
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+            <p>Are you a provider? <a href="{% url 'register_provider' %}">Register as Provider</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
