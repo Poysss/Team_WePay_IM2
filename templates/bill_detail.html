@@ -1,0 +1,82 @@
+<!-- templates/billing/bill_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Bill Details - WePay{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card bill-detail">
+        <div class="bill-header">
+            <h2>Bill Details</h2>
+            <span class="status-badge status-{{ bill.status|lower }}">
+                {{ bill.status }}
+            </span>
+        </div>
+        
+        <div class="bill-info">
+            <div class="info-row">
+                <span class="label">Bill Type:</span>
+                <span class="value">{{ bill.bill_type }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Amount:</span>
+                <span class="value">${{ bill.amount|floatformat:2 }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Due Date:</span>
+                <span class="value">{{ bill.due_date|date:"F j, Y" }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Provider:</span>
+                <span class="value">{{ bill.provider.provider_name }}</span>
+            </div>
+            
+            <div class="info-row">
+                <span class="label">Date Created:</span>
+                <span class="value">{{ bill.created_at|date:"F j, Y H:i" }}</span>
+            </div>
+        </div>
+
+        {% if bill.status == 'Unpaid' and user == bill.user %}
+        <div class="bill-actions">
+            <a href="{% url 'make_payment' bill.id %}" class="btn btn-primary">Pay Now</a>
+        </div>
+        {% endif %}
+
+        {% if bill.payment_set.exists %}
+        <div class="payment-history">
+            <h3>Payment History</h3>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for payment in bill.payment_set.all %}
+                        <tr>
+                            <td>{{ payment.payment_date|date:"F j, Y H:i" }}</td>
+                            <td>${{ payment.amount_paid|floatformat:2 }}</td>
+                            <td>{{ payment.payment_method.payment_type }}</td>
+                            <td>
+                                <span class="status-badge status-{{ payment.status|lower }}">
+                                    {{ payment.status }}
+                                </span>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Sent Bills - WePay{% endblock %}
+
+{% block content %}
+<div class="sent-bills-container">
+    <h1>Sent Bills History</h1>
+    
+    <div class="sent-bills-card">
+        <div class="table-responsive">
+            <table class="sent-bills-table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Bill Type</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Sent Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bill in bills %}
+                    <tr>
+                        <td>{{ bill.user.username }}</td>
+                        <td>{{ bill.bill_type }}</td>
+                        <td>${{ bill.amount }}</td>
+                        <td>{{ bill.due_date }}</td>
+                        <td>
+                            <span class="status-badge status-{{ bill.status|lower }}">
+                                {{ bill.status }}
+                            </span>
+                        </td>
+                        <td>{{ bill.created_at|date:"M d, Y" }}</td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="6">No sent bills found.</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

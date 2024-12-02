@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Bill History - WePay{% endblock %}
+{% block content %}
+<div class="history-container">
+    <!-- New title container -->
+    <div class="title-container">
+        <h1>Bill History</h1>
+        <p class="subtitle">View and manage your payment records</p>
+    </div>
+
+    <div class="card">
+        <div class="table-responsive">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Provider</th>
+                        <th>Bill Type</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Created Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for bill in bills %}
+                    <tr>
+                        <td class="provider-column">{{ bill.provider.provider_name }}</td>
+                        <td class="bill-type-column">{{ bill.bill_type }}</td>
+
+                        <td class="amount-column">${{ bill.amount }}</td>
+                        <td class="date-column">{{ bill.due_date }}</td>
+                        <td><span class="status-badge status-{{ bill.status|lower }}">{{ bill.status }}</span></td>
+                        <td class="date-column">{{ bill.created_at|date:"M d, Y" }}</td>
+                        <td>
+                            {% if bill.status == 'Unpaid' %}
+                            <a href="{% url 'make_payment' bill.id %}" class="btn btn-primary btn-sm">Pay Now</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% empty %}
+                    <tr>
+                        <td colspan="7">
+                            <div class="empty-state">
+                                <i class="fas fa-file-invoice"></i>
+                                <p>No bills found.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
