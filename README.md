@@ -63,7 +63,7 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
 5. Start the development server
   python manage.py runserver
 
-##Usage
+### Usage
 
 1. Register as a User or Provider
 
@@ -81,7 +81,7 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
   •	Manage subscriber list 
   •	Generate reports
 
-##Roadmap
+### Roadmap
   •	Basic user and provider authentication 
   •	Bill management system 
   •	Payment processing 
@@ -90,21 +90,23 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
   •	Advanced reporting features
   
 
-##The Team
+### The Team
   •	Nacario, Spencer Z.
   • Lood, Jake Luis E.
   • Azcona, Jeffer L.
 
 
-##Contact
+### Contact
   •	spencer.nacario@cit.edu
   •	jakeluis.lood@cit.edu
   •	jeffer.azcona@cit.edu
 
 
-###Gantt Chart and Entity Relationship Diagram
+### Gantt Chart and Entity Relationship Diagram
   
 [Gantt-Chart.xlsx](https://github.com/user-attachments/files/17983953/Gantt-Chart.xlsx)
+![image](https://github.com/user-attachments/assets/cbd5c39c-d6ca-46ff-ac49-1f7d7cf67140)
+
 
 ![image](https://github.com/user-attachments/assets/0dc344d9-9ec3-49c4-b159-46f2e341000d)
 
