@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block title %}Provider Dashboard - WePay{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="welcome-header">
+        <h1>Welcome, {{ user.userprofile.provider.provider_name }}</h1>
+    </div>
+    
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+        <div class="stat-card">
+            <i class="fas fa-users stat-icon"></i>
+            <div class="stat-value">{{ subscriber_count }}</div>
+            <div class="stat-label">Total Subscribers</div>
+        </div>
+        
+        <div class="stat-card">
+            <i class="fas fa-dollar-sign stat-icon"></i>
+            <div class="stat-value">${{ total_received|floatformat:2 }}</div>
+            <div class="stat-label">Total Revenue</div>
+        </div>
+        
+        <div class="stat-card">
+            <i class="fas fa-file-invoice-dollar stat-icon"></i>
+            <div class="stat-value">{{ unpaid_bills }}</div>
+            <div class="stat-label">Unpaid Bills</div>
+        </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <a href="{% url 'sent_bill_history' %}" class="action-card">
+            <i class="fas fa-file-invoice"></i>
+            <h3>Sent Bills</h3>
+            <p>View and manage bills you've sent to users</p>
+        </a>
+        
+        <a href="{% url 'provider_users' %}" class="action-card">
+            <i class="fas fa-users"></i>
+            <h3>Users</h3>
+            <p>Manage your subscribers and their accounts</p>
+        </a>
+        
+        <a href="{% url 'notifications' %}" class="action-card">
+            <i class="fas fa-bell"></i>
+            <h3>Notifications</h3>
+            <p>Stay updated with important alerts and messages</p>
+        </a>
+        
+        <a href="{% url 'provider_profile' %}" class="action-card">
+            <i class="fas fa-user-cog"></i>
+            <h3>Account Settings</h3>
+            <p>Update your profile and business information</p>
+        </a>
+    </div>
+</div>
+{% endblock %}

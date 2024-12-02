@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Make Payment - WePay{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="card">
+        <h2>Make Payment</h2>
+        
+        <div class="bill-details">
+            <h3>Bill Details</h3>
+            <p><strong>Provider:</strong> {{ bill.provider.provider_name }}</p>
+            <p><strong>Bill Type:</strong> {{ bill.bill_type }}</p>
+            <p><strong>Amount:</strong> ${{ bill.amount }}</p>
+            <p><strong>Due Date:</strong> {{ bill.due_date }}</p>
+        </div>
+        
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="help-text">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Confirm Payment</button>
+            <a href="{% url 'bill_history' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

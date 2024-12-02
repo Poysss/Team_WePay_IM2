@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Provider Services - WePay{% endblock %}
+
+{% block content %}
+<div class="provider-services-container">
+    <div class="provider-services-header">
+        <h1>Available Providers</h1>
+    </div>
+    
+
+    <div class="providers-grid">
+        {% for provider in providers %}
+        <div class="provider-card">
+            <div class="provider-info">
+                <h3>{{ provider.provider_name }}</h3>
+                <p class="provider-description">{{ provider.contact_info }}</p>
+            </div>
+            <div class="provider-actions">
+                {% if provider.id in subscribed_providers %}
+                <form method="post" action="{% url 'unsubscribe_provider' provider.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Unsubscribe</button>
+                </form>
+                {% else %}
+                <form method="post" action="{% url 'subscribe_provider' provider.id %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                {% endif %}
+            </div>
+        </div>
+        {% empty %}
+        <p class="empty-state">No providers available</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

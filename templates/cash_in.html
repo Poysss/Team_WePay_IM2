@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Money - WePay{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <div class="card">
+        <h2>Add Money to {{ payment_method.payment_type }}</h2>
+        <p class="current-balance">Current Balance: ${{ payment_method.balance }}</p>
+        
+        <form method="post">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}:</label>
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="help-text">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Add Money</button>
+            <a href="{% url 'payment_options' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

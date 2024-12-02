@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Payment Report - WePay{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="page-header">
+        <h1>Payment Report</h1>
+        <div class="report-summary">
+            <div class="summary-item">
+                <span class="label">Total Payments:</span>
+                <span class="value">{{ total_count }}</span>
+            </div>
+            <div class="summary-item">
+                <span class="label">Total Amount:</span>
+                <span class="value">${{ total_amount|floatformat:2 }}</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h2>Monthly Payment Statistics</h2>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Month</th>
+                        <th>Number of Payments</th>
+                        <th>Total Amount</th>
+                        <th>Average Payment</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for month, stats in monthly_stats %}
+                    <tr>
+                        <td>{{ month }}</td>
+                        <td>{{ stats.count }}</td>
+                        <td>${{ stats.total|floatformat:2 }}</td>
+                        <td>${{ stats.total|div:stats.count|floatformat:2 }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

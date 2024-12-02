@@ -1,0 +1,63 @@
+<!-- templates/accounts/provider_profile.html -->
+{% extends 'base.html' %}
+
+{% block title %}Provider Profile - WePay{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>Provider Profile</h1>
+        <div class="profile-actions">
+            <a href="{% url 'change_password' %}" class="btn btn-secondary">Change Password</a>
+        </div>
+    </div>
+
+    <div class="card profile-card">
+        <form method="post" class="profile-form">
+            {% csrf_token %}
+            
+            <div class="form-section">
+                <h3>Account Information</h3>
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Username:</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="error-text">{{ form.username.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Email:</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <div class="error-text">{{ form.email.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Provider Information</h3>
+                <div class="form-group">
+                    <label for="{{ form.provider_name.id_for_label }}">Provider Name:</label>
+                    {{ form.provider_name }}
+                    {% if form.provider_name.errors %}
+                        <div class="error-text">{{ form.provider_name.errors.0 }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.contact_info.id_for_label }}">Contact Information:</label>
+                    {{ form.contact_info }}
+                    {% if form.contact_info.errors %}
+                        <div class="error-text">{{ form.contact_info.errors.0 }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

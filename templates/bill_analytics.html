@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+
+{% block title %}Bill Analytics - WePay{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1>Bill Analytics</h1>
+
+    <div class="analytics-grid">
+        <!-- Bill Type Distribution -->
+        <div class="dashboard-section">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Distribution by Bill Type</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="billTypeChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Payment Status Distribution -->
+        <div class="dashboard-section">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Distribution by Status</h2>
+                </div>
+                <div class="chart-container">
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detailed Statistics -->
+    <div class="card mt-4">
+        <div class="card-header">
+            <h2>Detailed Statistics</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stats-section">
+                <h3>By Bill Type</h3>
+                {% for stat in bill_type_stats %}
+                <div class="stat-item">
+                    <span class="stat-label">{{ stat.bill_type }}</span>
+                    <div class="stat-details">
+                        <span>Count: {{ stat.count }}</span>
+                        <span>Total: ${{ stat.total|floatformat:2 }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="stats-section">
+                <h3>By Status</h3>
+                {% for stat in status_stats %}
+                <div class="stat-item">
+                    <span class="stat-label">{{ stat.status }}</span>
+                    <div class="stat-details">
+                        <span>Count: {{ stat.count }}</span>
+                        <span>Total: ${{ stat.total|floatformat:2 }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Initialize charts
+document.addEventListener('DOMContentLoaded', function() {
+    // Bill Type Chart
+    const billTypeCtx = document.getElementById('billTypeChart').getContext('2d');
+    new Chart(billTypeCtx, {
+        type: 'pie',
+        data: {
+            labels: [{% for stat in bill_type_stats %}'{{ stat.bill_type }}',{% endfor %}],
+            datasets: [{
+                data: [{% for stat in bill_type_stats %}{{ stat.count }},{% endfor %}],
+                backgroundColor: [
+                    '#003366',
+                    '#D4AF37',
+                    '#4682B4',
+                    '#FFD700'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+
+    // Status Chart
+    const statusCtx = document.getElementById('statusChart').getContext('2d');
+    new Chart(statusCtx, {
+        type: 'doughnut',
+        data: {
+            labels: [{% for stat in status_stats %}'{{ stat.status }}',{% endfor %}],
+            datasets: [{
+                data: [{% for stat in status_stats %}{{ stat.total }},{% endfor %}],
+                backgroundColor: [
+                    '#28a745',
+                    '#dc3545'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false
+        }
+    });
+});
+</script>
+{% endblock %}
