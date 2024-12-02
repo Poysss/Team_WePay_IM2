@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}Welcome to WePay{% endblock %}
+
+{% block content %}
+<div class="landing-container">
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to <span class="brand-text">WePay</span></h1>
+            <p class="hero-subtitle">Your One-Stop Solution for Bill Management and Payments</p>
+            {% if not user.is_authenticated %}
+            <div class="hero-actions">
+                <a href="{% url 'register_user' %}" class="btn btn-primary">Get Started</a>
+                <a href="{% url 'login' %}" class="btn btn-secondary">Sign In</a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <section class="features-section">
+        <h2>Why Choose WePay?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Easy Bill Management</h3>
+                <p>Manage all your bills in one place with our intuitive interface.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-wallet"></i>
+                <h3>Multiple Payment Options</h3>
+                <p>Choose from various payment methods including Gcash, Mastercard, Paypal, and more.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-bell"></i>
+                <h3>Real-time Notifications</h3>
+                <p>Stay updated with instant notifications for bills and payments.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Secure Transactions</h3>
+                <p>Your payments are protected with industry-standard security.</p>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

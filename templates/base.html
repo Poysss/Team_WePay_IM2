@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WePay - {% block title %}{% endblock %}</title>
+    {% load static %}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact-about.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="{% static 'css/user_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bill_history.css' %}">
+    <link rel="stylesheet" href="{% static 'css/notifications_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/payment_success.css' %}">
+    <link rel="stylesheet" href="{% static 'css/notifications.css' %}">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/payment_options.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bill_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/provider_services.css' %}">
+    <link rel="stylesheet" href="{% static 'css/make_payment.css' %}">
+    <link rel="stylesheet" href="{% static 'css/provider_dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/sent_bills.css' %}">
+    
+
+    
+
+</head>
+<body style = "background-image:url('{% static 'images/bg-image.png' %}'); background-repeat: no-repeat; background-size: 100%;">
+    <nav class="navbar">
+        <div class="nav-brand">
+            <a href="{% url 'landing' %}" class="brand-link">WePay</a>
+        </div>
+        <div class="nav-links">
+            {% if user.is_authenticated %}
+                {% if user.userprofile.is_provider %}
+                    <a href="{% url 'provider_home' %}">Home</a>
+                    <a href="{% url 'provider_profile' %}">Account</a>
+                    <a href="{% url 'notifications' %}">Notifications</a>
+                    <a href="{% url 'sent_bill_history' %}">Sent Bills</a>
+                {% else %}
+                    <a href="{% url 'user_home' %}">Home</a>
+                    <a href="{% url 'bill_history' %}">Bill History</a>
+                    <a href="{% url 'notifications' %}">Notifications</a>
+                    <a href="{% url 'profile' %}">Profile</a>
+                    <a href="{% url 'payment_options' %}">Payment Options</a>
+                    <a href="{% url 'provider_services' %}">Provider Services</a>
+                {% endif %}
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <form method="post" action="{% url 'logout' %}" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="logout-btn">Logout</button>
+                </form>
+            {% else %}
+                <a href="{% url 'landing' %}">Home</a>
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'register_user' %}">Register</a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'contact' %}">Contact</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <main class="container">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message {{ message.tags }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 WePay. All rights reserved.</p>
+    </footer>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>
