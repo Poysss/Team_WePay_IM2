@@ -69,43 +69,44 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
 
 2. For Users
    
-  •	Add payment methods 
-  •	View bills 
-  •	Make payments 
-  •	Track payment history
+  *	Add payment methods 
+  *	View bills 
+  *	Make payments 
+  *	Track payment history
 
 3. For Providers
    
-  •	Send bills to users 
-  •	Track payments 
-  •	Manage subscriber list 
-  •	Generate reports
+  *	Send bills to users 
+  *	Track payments 
+  *	Manage subscriber list 
+  *	Generate reports
 
 ### Roadmap
-  •	Basic user and provider authentication 
-  •	Bill management system 
-  •	Payment processing 
-  •	Notification system
-  •	Additional payment methods 
-  •	Advanced reporting features
+  *	Basic user and provider authentication 
+  *	Bill management system 
+  *	Payment processing 
+  *	Notification system
+  *	Additional payment methods 
+  *	Advanced reporting features
   
 
 ### The Team
-  •	Nacario, Spencer Z.
-  • Lood, Jake Luis E.
-  • Azcona, Jeffer L.
+  *	Nacario, Spencer Z.
+  * Lood, Jake Luis E.
+  * Azcona, Jeffer L.
 
 
 ### Contact
-  •	spencer.nacario@cit.edu
-  •	jakeluis.lood@cit.edu
-  •	jeffer.azcona@cit.edu
+  *	spencer.nacario@cit.edu
+  *	jakeluis.lood@cit.edu
+  *	jeffer.azcona@cit.edu
 
 
 ### Gantt Chart and Entity Relationship Diagram
   
 [Gantt-Chart.xlsx](https://github.com/user-attachments/files/17983953/Gantt-Chart.xlsx)
-![image](https://github.com/user-attachments/assets/cbd5c39c-d6ca-46ff-ac49-1f7d7cf67140)
+![image](https://github.com/user-attachments/assets/da2c7d3b-387e-4ff5-ac1e-68942450d0a6)
+
 
 
 ![image](https://github.com/user-attachments/assets/0dc344d9-9ec3-49c4-b159-46f2e341000d)
