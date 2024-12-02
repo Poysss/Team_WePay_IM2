@@ -35,8 +35,7 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
   * JavaScript
   * SQLite Database
   * Font Awesome Icons
-  * Bootstrap (optional)
-
+    
 ## Getting Started
 
 ### Prerequisites
