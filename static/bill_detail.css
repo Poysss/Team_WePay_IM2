@@ -1,0 +1,92 @@
+.bill-detail {
+    background-color: #003366; /* Dark blue background */
+    color: white; /* Default text color */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.bill-detail .bill-header h2 {
+    color: #ffd700; /* Yellow for the header title */
+    margin-bottom: 15px;
+}
+
+.bill-detail .label {
+    color: #ffd700; /* Yellow for labels */
+    font-weight: bold;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.bill-detail .value {
+    color: white; /* White for values */
+    display: inline-block;
+}
+
+.bill-detail .info-row {
+    margin-bottom: 10px;
+}
+
+.bill-detail .bill-actions .btn-primary {
+    background-color: #ffd700; /* Yellow button background */
+    color: #003366; /* Dark blue button text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bill-detail .bill-actions .btn-primary:hover {
+    background-color: #e6b800; /* Slightly darker yellow on hover */
+}
+
+.payment-history {
+    margin-top: 30px;
+}
+
+.payment-history h3 {
+    color: #ffd700; /* Yellow for Payment History heading */
+    margin-bottom: 15px;
+}
+
+.payment-history .table th {
+    color: #ffd700; /* Yellow for table headers */
+}
+
+.payment-history .table td {
+    color: white; /* White for table data */
+}
+
+.status-badge {
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status-badge.status-unpaid {
+    background-color: #ff0000; /* Red for unpaid */
+    color: white;
+}
+
+.status-badge.status-paid {
+    background-color: #008000; /* Green for paid */
+    color: white;
+}
+
+
+.payment-history .table th {
+    color: black !important; /* Force table headers to black */
+    font-weight: bold;
+}
+
+
+/* Button Styling */
+.bill-actions .btn {
+    display: inline-flex;  /* Ensure the button is inline-flex to align items */
+    justify-content: center;  /* Center the content horizontally */
+    align-items: center;  /* Center the content vertically */
+    width: auto;  /* Ensure the button does not stretch */
+    padding: 0.5rem 1.5rem;  /* Adjust padding for better size */
+    text-align: center;  /* Center the text */
+}

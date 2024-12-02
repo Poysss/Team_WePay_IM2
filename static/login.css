@@ -1,0 +1,179 @@
+
+  
+
+  
+  .auth-card h2 {
+    color: #1f2937;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 3px solid #e5e7eb;
+    border-radius: 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    outline: none;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2.5rem;
+    background: #003366;
+    color: white;
+    border: 3px solid #003366;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  
+  .btn:hover {
+    background: #4338ca;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
+  }
+  
+  .auth-links {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 3px solid #f3f4f6;
+  }
+  
+  .auth-links a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .auth-links a:hover {
+    color: #4338ca;
+    text-decoration: underline;
+  }
+
+  .auth-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #003366 0%, #001a4d 100%);
+    padding: 2rem;
+  }
+  
+  .auth-card {
+    background: white;
+    border-radius: 30px;
+    border: 6px solid #ffd700;
+    padding: 3.5rem;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+  .auth-card h2 {
+    color: #003366;
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 2rem;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 1.2rem;
+    border: 3px solid #e5e7eb;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+  }
+  
+  .form-group input:focus {
+    border-color: #003366;
+    box-shadow: 0 0 0 4px rgba(0, 51, 102, 0.1);
+    outline: none;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2.5rem;
+    background: #003366;
+    color: white;
+    border: 3px solid #003366;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block; /* Make button a block-level element */
+    margin-left: auto; /* Center the button horizontally */
+    margin-right: auto; /* Center the button horizontally */
+  }
+  
+  .btn:hover {
+    background: #ffd700;
+    border-color: #ffd700;
+    color: #003366;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+  }
+  
+  .auth-links {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 2rem;
+    border-top: 3px solid #f3f4f6;
+  }
+  
+  .auth-links a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .auth-links a:hover {
+    color: #ffd700;
+    text-decoration: underline;
+  }
+
+/* Apply the placeholder color using a more specific selector */
+.auth-card .form-group input::placeholder {
+  color: #e5e7eb; /* Light grey color */
+}
+
+.auth-card label {
+  color: black !important; /* Change label text color to black */
+}
+
+

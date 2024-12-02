@@ -1,0 +1,630 @@
+/* Variables */
+:root {
+    --navy-blue: #003366;
+    --metallic-gold: #D4AF37;
+    --white: #FFFFFF;
+    --light-gray: #F5F5F5;
+    --success-green: #28a745;
+    --danger-red: #dc3545;
+    --gray-600: #6c757d;
+    --gray-700: #5a6268;
+}
+
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #5a5d89;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout & Containers */
+.container, 
+.dashboard-container,
+.profile-container,
+.success-container,
+.notifications-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    text-align: left;
+}
+
+.main-content {
+    flex: 1 0 auto;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--navy-blue);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-brand,
+.nav-brand a {
+    color: var(--metallic-gold);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--metallic-gold);
+}
+
+/* Cards */
+.card,
+.section-card,
+.action-card,
+.profile-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+.card,
+.action-card,
+.profile-card {
+    padding: 2rem;
+}
+
+.action-card {
+    text-align: center;
+    text-decoration: none;
+    color: var(--navy-blue);
+    transition: all 0.3s ease;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    color: var(--metallic-gold);
+}
+
+.action-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--navy-blue);
+}
+
+.action-card:hover i {
+    color: var(--metallic-gold);
+}
+
+.action-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.25rem;
+}
+
+.action-card p {
+    color: #666;
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Would you like me to continue with the rest of the cleaned CSS? I'll maintain all functionality while removing duplicates. */
+
+/* Buttons */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: var(--navy-blue);
+    color: var(--white);
+    
+}
+
+.btn-secondary {
+    background-color: var(--navy-blue);
+    color: var(--white);
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+}
+
+.btn:hover,
+.btn-primary:hover {
+    background-color: var(--metallic-gold);
+}
+
+.btn-secondary:hover {
+    background-color: var(--navy-blue);
+}
+
+/* Logout Button */
+.logout-form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    font-size: inherit;
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    transition: color 0.3s ease;
+}
+
+.logout-btn:hover {
+    color: var(--metallic-gold);
+}
+
+.logout-btn.button-style {
+    background-color: var(--navy-blue);
+    border: 1px solid var(--white);
+    border-radius: 4px;
+}
+
+.logout-btn.button-style:hover {
+    background-color: var(--metallic-gold);
+    color: var(--white);
+}
+
+/* Forms */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--navy-blue);
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--navy-blue);
+    box-shadow: 0 0 0 2px rgba(0, 51, 102, 0.1);
+}
+
+.form-row {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group.half {
+    flex: 1;
+}
+
+.form-actions {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.error-text {
+    color: var(--danger-red);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Tables */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.table th {
+    background-color: #f8f9fa;
+    color: var(--navy-blue);
+    font-weight: 600;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.status-paid {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-unpaid {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Messages */
+.messages {
+    margin-bottom: 1rem;
+}
+
+.message {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Section Headers */
+.section-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: var(--navy-blue);
+}
+
+/* Success Pages */
+.success-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.success-header i {
+    font-size: 3rem;
+    color: var(--success-green);
+    margin-bottom: 1rem;
+}
+
+/* Would you like me to continue with Part 3? It will include:
+- Notifications
+- Profile styles
+- Bill details
+- Footer
+- Media queries
+*/
+
+/* Notifications */
+.notifications-header {
+    margin-bottom: 2rem;
+}
+
+.notifications-header h1 {
+    color: var(--navy-blue);
+    margin: 0;
+}
+
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.notification-box {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.notification-box.unread {
+    border-left: 4px solid var(--navy-blue);
+    background-color: #f0f7ff;
+}
+
+.notification-title {
+    font-weight: 600;
+    color: var(--navy-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.notification-message {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.notification-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.empty-notifications {
+    text-align: center;
+    padding: 3rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.empty-notifications i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--navy-blue);
+}
+
+.empty-notifications p {
+    color: #666;
+    margin: 0;
+}
+
+/* Profile */
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    margin: 0;
+    color: var(--navy-blue);
+}
+
+.profile-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.form-section h3 {
+    color: var(--navy-blue);
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+}
+
+/* Auth Links */
+.auth-links {
+    margin-top: 1.5rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+}
+
+.auth-links a {
+    color: var(--navy-blue);
+    text-decoration: none;
+}
+
+.auth-links a:hover {
+    color: var(--metallic-gold);
+}
+
+/* Bill Details */
+.bill-detail {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.bill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.bill-info {
+    margin-bottom: 2rem;
+}
+
+.info-row,
+.detail-row {
+    display: flex;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.info-row .label,
+.detail-row .label {
+    flex: 0 0 150px;
+    font-weight: 600;
+    color: var(--navy-blue);
+}
+
+.info-row .value,
+.detail-row .value {
+    flex: 1;
+}
+
+.bill-actions {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    text-align: right;
+}
+
+/* Transaction Details */
+.transaction-details {
+    padding: 1rem 0;
+}
+
+.transaction-details h3 {
+    color: var(--navy-blue);
+    margin-bottom: 1.5rem;
+}
+
+/* Success Actions */
+.success-actions {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Payment History */
+.payment-history {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.payment-history h3 {
+    margin-bottom: 1rem;
+    color: var(--navy-blue);
+}
+
+/* Footer */
+.footer {
+    flex-shrink: 0;
+    background-color: var(--navy-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left !important;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .success-actions {
+        flex-direction: column;
+    }
+
+    .detail-row,
+    .notification-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button,
+    .form-actions a,
+    .notification-meta .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
