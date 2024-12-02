@@ -105,7 +105,8 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
 ### Gantt Chart and Entity Relationship Diagram
   
 [Gantt-Chart.xlsx](https://github.com/user-attachments/files/17983953/Gantt-Chart.xlsx)
-![image](https://github.com/user-attachments/assets/da2c7d3b-387e-4ff5-ac1e-68942450d0a6)
+![image](https://github.com/user-attachments/assets/902eaf88-96f0-411e-94b8-522c9ca43d14)
+
 
 
 
