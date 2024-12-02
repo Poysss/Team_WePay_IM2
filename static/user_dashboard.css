@@ -1,0 +1,135 @@
+/* Welcome header with username */
+.welcome-header {
+    position: relative;
+    text-align: left;
+    padding: 2rem 0 4rem 4rem;
+}
+
+.welcome-header h1 {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 300;
+}
+
+/* Unique username card styling */
+.welcome-header h1 span {
+    color: #ffd700;
+    font-weight: 700;
+    display: inline-block;
+    padding: 0.5rem 2rem;
+    background: rgba(0, 51, 102, 0.6);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    margin-left: 0.5rem;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Menu Grid Layout */
+.quick-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+/* Menu Items with background */
+.action-card {
+    background: #003366;
+    border: 1px solid #ffd700;
+    border-radius: 15px;
+    padding: 2.5rem;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Icon Styling */
+.action-card .icon {
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* Text Styling */
+.action-card h3 {
+    color: #ffd700;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.action-card p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Hover Effects */
+.action-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 51, 102, 0.8);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.action-card:hover .icon,
+.action-card:hover h3 {
+    color: #ffed4a;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .quick-actions {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-header {
+        padding: 2rem 0 3rem 2rem;
+    }
+
+    .welcome-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .action-card {
+        padding: 2rem;
+    }
+}
+/* Update these styles in your user_dashboard.css */
+.welcome-header {
+    position: relative;
+    text-align: left;
+    padding: 1.5rem 2rem;  /* Reduced padding */
+    background: rgba(0, 51, 102, 0.6);
+    border: 2px solid #ffd700;
+    border-radius: 15px;
+    width: fit-content;  /* Make container fit the content */
+    min-width: 300px;   /* Minimum width */
+    margin: 0 auto 3rem auto;  /* Center the container and add bottom margin */
+}
+
+.welcome-header h1 {
+    color: white;
+    font-size: 2.5rem;  /* Slightly smaller font */
+    font-weight: 300;
+    margin: 0;  /* Remove default margins */
+}
+
+.welcome-header h1 span {
+    color: #ffd700;
+    font-weight: 700;
+    display: inline-block;
+}

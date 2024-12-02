@@ -1,0 +1,77 @@
+/* Title Styling: "Make Payment" */
+.card h2 {
+    color: #ffd700; /* Yellow color */
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+/* Bill Details Styling */
+.bill-details h3 {
+    color: #ffd700; /* Yellow color for section header */
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.bill-details p {
+    color: white; /* White color for details */
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+/* Form Buttons at the Bottom */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    position: relative;
+    padding-bottom: 2rem; /* Padding to ensure the buttons stay at the bottom */
+}
+
+.form-container .btn {
+    width: auto;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem; /* Increased space between buttons */
+}
+
+/* Confirm Payment Button (White border) */
+.form-container .btn-primary {
+    
+    background-color: #ffd700; /* Yellow background */
+    color: #003366; /* Dark blue text */
+}
+
+.form-container .btn-primary:hover {
+    background-color: #ffed4a; /* Lighter yellow on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/* Cancel Button (Yellow border) */
+.form-container .btn-secondary {
+    border: 2px solid #ffd700; /* Yellow border */
+    background-color: transparent; /* No background color */
+    color: #ffd700; /* Yellow text */
+    margin-top: 0.5rem; /* Space between Cancel button and others */
+}
+
+.form-container .btn-secondary:hover {
+    background-color: rgba(255, 215, 0, 0.1); /* Light yellow background on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+/* Optional: Center the buttons at the bottom */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Align buttons to the bottom */
+}

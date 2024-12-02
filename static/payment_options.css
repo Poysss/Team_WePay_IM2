@@ -1,0 +1,195 @@
+.payment-options-container {
+    display: flex;
+    flex-direction: row; /* Align items side by side */
+    gap: 2rem;
+    align-items: flex-start; /* Align to the top of the page */
+    
+}
+
+.add-payment-method-card {
+    flex: 0 0 30%; /* Smaller container for the "Add Payment Method" section */
+    background: #003366;
+    color: #ffd700;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(239, 236, 236, 0.1);
+    text-align: center;
+}
+
+.payment-methods-container {
+    flex: 1; /* Larger container for payment methods */
+    background: rgba(0, 51, 102, 0.6);
+    border: 2px solid #ffd700;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allow scrolling */
+    max-height: 70vh; /* Restrict height */
+}
+
+.payment-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    gap: 1.5rem; /* Space between grid items */
+}
+
+.payment-method-card {
+    background: #003366;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method-card h3 {
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.payment-method-card .balance {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.payment-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+}
+
+
+.btn-primary {
+    background: #ffd700;
+    color: #003366;
+}
+
+.btn-primary:hover {
+    background: #ffed4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.btn-danger {
+    background: rgba(239, 68, 68, 0.8);
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #f87171;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(248, 113, 113, 0.3);
+}
+
+.inline-form {
+    display: inline;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    color: #ffd700;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.payment-options-container .form-group select {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: #527293; /* Dark blue background */
+    color: white; /* Yellow text color */
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 9999px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10l5 5 5-5z' fill='%23003366'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.5em;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ffd700;
+}
+
+.form-group .help-text {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+}
+
+.payment-methods-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.payment-methods-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.7);
+    border-radius: 4px;
+}
+
+.payment-methods-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 215, 0, 1);
+}
+
+@media (max-width: 768px) {
+    .payment-options-container {
+        flex-direction: column;
+    }
+
+    .add-payment-method-card,
+    .payment-methods-container {
+        flex: auto;
+        width: 100%;
+    }
+}
+
+.button-container {
+    display: flex;               /* Enable flexbox */
+    justify-content: center;     /* Center button horizontally */
+    align-items: center;         /* Center button vertically */
+    margin-top: 1.5rem;          /* Space from the form fields */
+}
+
+.yellow-text {
+    color: #ffd700;  /* Yellow color */
+}
+
+.card h2 {
+    color: #ffffff; /* White color */
+    font-size: 1.8rem; /* Optional: Adjust font size */
+    margin-bottom: 1rem; /* Optional: Add spacing below */
+}
+
+.card .current-balance {
+    color: #ffd700; /* White color for Current Balance text */
+    font-size: 1rem; /* Optional: Adjust font size */
+    margin-bottom: 1.5rem; /* Optional: Add spacing below */
+}
