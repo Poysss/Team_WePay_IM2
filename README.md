@@ -13,7 +13,6 @@ Our mission is to revolutionize bill payments by providing a secure, efficient, 
   * Real-time payment notifications
   * Secure transaction processing
   * User-friendly interface
-  * 24/7 bill payment service
   * Provider dashboard for billing operations
 
 ### For Users:
